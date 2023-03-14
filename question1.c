@@ -29,7 +29,7 @@ int isString(char* str ){
 	return count;
 
 }
-//Handle valid input
+//Handle valid input   -- limited to numbers less than 16
 int factorial(int num){
 	if(num <0){
 		return 0;
@@ -47,42 +47,82 @@ int factorial(int num){
 	fact = num*factorial(num-1);
 	return fact;
 }
+//sum of factorials
 
-// Handle invalid input
+int sumOfFactorials(int number){
 
-void tryAgain(){
-
-	printf("The input entered is not an int please try again");
-	char* repeat = getUserInput();
-	int isValid = isString(repeat);
-	
-	
-
-}
-
-
-
-int main(){
-
-//initial trial
-char* userInput = getUserInput();
-int isCorrect = isString(userInput);
-	if(isCorrect != 0){
-		tryAgain();
-	}
-	else{
 		//cast user input to int;
-		int number;
 		int result;
-		number = atoi(userInput);
+	
 		
 		result = factorial(number)+factorial(number-1)+factorial(number-2);
 		printf("Result %d\n",result);
 
+
+}
+
+// Handle invalid input
+
+int tryAgain(){
+ 
+	printf("The input entered is not an int please try again\n");
+	char* repeat = getUserInput();
+	int isValid = isString(repeat);
+
+if(isValid == 0){ //valid input on trial
+	int value;
+	value = atoi(repeat);
+		return value;
+}else{   //invalid input on trial
+
+	 
+return -0;
+}
+
+	
+}
+
+
+
+void main(){
+
+//initial trial
+
+char* userInput = getUserInput();
+int isCorrect = isString(userInput);
+
+	if(isCorrect == 0){
+		
+		//cast user input to int;
+		int val;
+		val = atoi(userInput);
+		long finalOutput = sumOfFactorials(val);
+
+		return ;
+		
+
+	}else{
+		//give the user 4 more chances
+		
+int trials ;
+for(trials=1;trials<5;trials++){
+	
+		int trialResult=tryAgain();
+
+		if(trialResult!= -0){
+			sumOfFactorials(trialResult);
+			break;
+
+			}
+		
+
+		//break;
 	}
 
 
-return 0;
+
+	}
+
 
 
 }
