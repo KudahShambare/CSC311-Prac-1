@@ -9,7 +9,7 @@
 	// Get user input
 	
 	static char userData [50];
-	printf("Please enter n:  \n" );
+	printf("Please enter and an integer n: (Note that long  numbers may give unexpected answers)  \n" );
 	scanf("%s",userData);
 	
 	
@@ -55,7 +55,7 @@ int sumOfFactorials(int number){
 		int result;
 	
 		
-		result = factorial(number)+factorial(number-1)+factorial(number-2);
+		result = factorial(number)+factorial(number+1)+factorial(number+2);
 		printf("Result %d\n",result);
 
 
@@ -116,7 +116,7 @@ for(trials=1;trials<5;trials++){
 			}
 		
 
-		//break;
+		printf("You have entered non-integers on five occasions, now the program is exiting\n");
 	}
 
 
